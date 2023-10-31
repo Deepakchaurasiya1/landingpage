@@ -172,7 +172,10 @@ backdrop-filter: blur(6px);
     .mobile{
         display: block;
     }
+body{
+  overflow: scroll;
 
+}
 } 
   
   /* Deepak Code Write This */
