@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap');
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.button {
+  display: flex;
+  text-align: center;
+  z-index: 3;
+}
+
+.borderright {
+  border-right: 1px solid white;
+}
+
+.button>div {
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.default {
+  z-index: 2;
+}
+
+.forwardanimation {
+  animation-name: topvideo;
+  left: -100vw;
+  /* background-color: red; */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  z-index: 2;
+}
+
+@keyframes topvideo {
+  0% {
+    left: -100vw;
+  }
+
+  100% {
+    left: 0vw;
+  }
+}
+
+.backwardannimation {
+  animation-name: backvideo;
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+@keyframes backvideo {
+  100% {
+    width: 100%;
+  }
+}
+
+
+.button>div {
+  display: flex;
+}
+
+.boxarea {
+  margin-top: auto;
+}
+
+.box2 {
+  padding: 1rem;
+  width: 23vw;
+  height: 15rem;
+  display: flex;
+}
+.box2>div{
+  margin-top: auto;
+}
+
+.box2heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Dm Sans", sans-serif;
+}
+
+.box2button>button {
+  font-size: 14px;
+  padding: 10px 35px 10px 35px;
+  border-radius: 120px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
+  font-family: "Dm Sans", sans-serif;
+}
+
+.box2text {
+  color: #bcc3c5;
+font-family: "Dm Sans", sans-serif;
+visibility: hidden;
+height: 0;
+transition: visibility 0s, height 0.5s;font-size: 14px;
+}
+
+.active {
+  visibility: visible !important;
+height: auto !important;
+transition: visibility 0s, height 0.5s; /* Add a transition for height */
+transition-delay: 0.5s !important;
+}
+
+
+.box1{
+  position: relative;
+}
+span{
+position: absolute;
+right: 0;
+bottom: 36.6%;
+font-weight: 400;
+font-size: 14px;
+font-family: "Dm Sans",sans-serif;
+line-height: 17px;
+color: #fff;
+padding: 6px 23px;
+opacity: 1;
+letter-spacing: .045em;
+transform: rotate(90deg);
+transform-origin: right top;
+background-color:#333;
+-webkit-backdrop-filter: blur(7px) brightness(70%);
+/* backdrop-filter: blur(7px) brightness(70%); */
+z-index: 20
+}
+.active1{
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+}
+
+.mobile{
+    display: none;
+}
+
+ @media only screen and (max-width: 1200px) {
+    
+    .videosection{
+        display: none;
+    }
+    .button{
+        display: none;
+    }
+    body{
+        background-color: #fff;
+    }
+    .mobile{
+        display: block;
+    }
+
+} 
+  
+  /* Deepak Code Write This */
+.phoneslider {
+  width: 100%;
+  margin: auto;
+  color: white;
+  position: relative;
+}
+
+/* Slider Image */
+.slider {
+  padding: 20% 2% 5% 2%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/assets/agency-bg-img1.jpg);
+}
+.slider1 {
+  padding: 20% 2% 5% 2%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/assets/agency-bg-img2.jpg);
+}
+.slider2 {
+  padding: 20% 2% 5% 2%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/assets/agency-bg-img3.jpg);
+}
+.slider3 {
+  padding: 20% 2% 5% 2%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/assets/agency-bg-img5.jpg);
+}
+/* Button Home Phone Slider */
+#phonebtn {
+  margin-top: 3%;
+  border: none;
+  opacity: 0.9;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 30px;
+  border-radius: 20px;
+  padding: 6px 33px 7px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-family: "Dm Sans", sans-serif;
+  background-color: rgba(255, 255, 255, 0.264);
+}
+.slider p {
+  margin-top: 3%;
+}
+.slider h2 {
+  margin-top: 3%;
+}
+  
+

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css"  >
+</head>
+
+<body>
+
+  <section class="button">
+    <div onmouseenter="handleEnter(1)" class="box borderright">
+      <div class="boxarea">
+        <div class="box1"><span>Website to be build</span></div>
+        <div class="box2">
+          <div>
+          <div class="box2heading">
+            <p>Website to be build</p>
+          </div>
+          <div class="box2text">
+            <p>Building a dynamic, user-friendly website with modern design and interactive features for diverse audiences.
+            </p>
+          </div>
+          <div class="box2button"><Button>View More</Button></div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div onmouseenter="handleEnter(2)" class="box borderright">
+    
+      <div class="boxarea">
+        <div class="box1"><span>Business Solution</span></div>
+        <div class="box2">
+          <div>
+          <div class="box2heading">
+            <p>Business Solution</p>
+          </div>
+          <div class="box2text">
+            <p>Effective business solutions optimize processes, increase productivity, and drive growth, ensuring long-term success and sustainability.
+            </p>
+          </div>
+          <div class="box2button"><Button>View More</Button></div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+    <div onmouseenter="handleEnter(3)"  class="box borderright">
+    
+      <div class="boxarea">
+        <div class="box1"><span>Marketing solution</span></div>
+        <div class="box2">
+          <div>
+          <div class="box2heading">
+            <p>Marketing solution</p>
+          </div>
+          <div class="box2text">
+            <p>A marketing solution integrates strategy, data, and creativity to engage, attract, and retain customers effectively.
+            </p>
+          </div>
+          <div class="box2button"><Button>View More</Button></div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+    <div onmouseenter="handleEnter(4)" class="box borderright">
+    
+      <div class="boxarea">
+        <div class="box1"><span style="margin-right: 1.5rem;" >IT Support</span></div>
+        <div class="box2">
+          <div>
+          <div class="box2heading">
+            <p>IT Support</p>
+          </div>
+          <div class="box2text">
+            <p>IT support offers assistance with hardware, software, network, and security issues, ensuring smooth technology operations.
+            </p>
+          </div>
+          <div class="box2button"><Button>View More</Button></div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="videosection">
+    <video class="position vedio default" controls autoplay loop muted src="./assets/video1.mp4"></video>
+    <video class="position vedio backwardannimation" controls autoplay loop muted src=""></video>
+  </section>
+
+ <section class="mobile" >
+  <section class="phoneslider">
+    <div class="slider">
+        <h2>Strategy</h2>
+        <p>Ea duo meis singulis, mel meis cetero no fabellas prodesset vim ei, mea vituper accumsan nihil essent pro
+        </p>
+        <input id="phonebtn" type="button" value="View More">
+    </div>
+    <div class="slider1">
+        <h2>Strategy</h2>
+        <p>Ea duo meis singulis, mel meis cetero no fabellas prodesset vim ei, mea vituper accumsan nihil essent pro
+        </p>
+        <input id="phonebtn" type="button" value="View More">
+    </div>
+    <div class="slider2">
+        <h2>Strategy</h2>
+        <p>Ea duo meis singulis, mel meis cetero no fabellas prodesset vim ei, mea vituper accumsan nihil essent pro
+        </p>
+        <input id="phonebtn" type="button" value="View More">
+    </div>
+    <div class="slider3">
+        <h2>Strategy</h2>
+        <p>Ea duo meis singulis, mel meis cetero no fabellas prodesset vim ei, mea vituper accumsan nihil essent pro
+        </p>
+        <input id="phonebtn" type="button" value="View More">
+    </div>
+</section>
+ </section>
+
+
+</body>
+
+</html>
+
+<script>
+  var preevent
+  var precounter
+  var counter = 0
+  var pad
+
+  var videoSources = [
+    './assets/video1.mp4',
+    './assets/video2.mp4',
+    './assets/video3.mp4',
+    './assets/video4.mp4'
+  ];
+  window.onload = function () {
+    preloadVideos();
+  };
+  function preloadVideos() {
+    for (var i = 0; i < videoSources.length; i++) {
+      continue;
+    }
+  }
+
+  function handleEnter(e) {
+
+
+
+    handleOut()
+    precounter = counter
+    preevent = e
+    if (counter === 0) {
+      counter = 1
+    }
+    else {
+      counter = 0
+    }
+    setTimeout(() => {
+      let element = document.getElementsByClassName("videosection")
+      let activeelement = element[0].children[counter]
+      // let activeelementclass=activeelement.className
+      activeelement.className = "position vedio forwardanimation"
+      activeelement.src = videoSources[e - 1]
+
+
+
+      let diactiveelement = element[0].children[precounter]
+      // let diactiveelementclass=diactiveelement.className
+      diactiveelement.className = "position vedio backwardannimation"
+      // diactiveelement.src=`./assets/video${preevent}.mp4`
+
+    }, 100)
+
+
+    let text=document.getElementsByClassName("box2text")
+    let textclass=text[e-1].className
+    text[e-1].className=textclass+" active"
+
+    let box=document.getElementsByClassName("box")
+    let boxclass=box[e-1].className
+    box[e-1].className=boxclass+" active1"
+    console.log(box)
+
+
+  
+
+    
+  }
+
+
+  function handleOut(e){
+    if(preevent!==undefined){
+      let text=document.getElementsByClassName("box2text")
+      text[preevent-1].className="box2text"
+
+
+      let box=document.getElementsByClassName("box")
+      box[preevent-1].className="box borderright"
+
+    }
+  }
+
+
+</script>
